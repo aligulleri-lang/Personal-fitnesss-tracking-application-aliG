@@ -23,10 +23,13 @@ def create_profile_input():
     pin = input("PIN (Şifre): ")
     name = input("İsim: ")
     age = int(input("Yaş: "))
+    target_w = input("Hedef Kilo (Opsiyonel): ") # Yeni alan
+    
+    goals = {}
+    if target_w:
+        goals['target_weight'] = target_w
+
     return {
         "email": email, "pin": pin, "name": name, 
-        "age": age, "goals": {}
-    }
-        "email": email, "pin": pin, "name": name, 
-        "age": age, "goals": {}
+        "age": age, "goals": goals
     }
